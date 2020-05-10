@@ -130,9 +130,10 @@ namespace OrcaMDF.Core.Tests
 			cmd.ExecuteNonQuery();
 		}
 
-		[TestFixtureTearDown]
+		//[TestFixtureTearDown]
 		public void TearDown()
 		{
+			// TODO: Breaking change
 			// Delete all collateral files resulting from running this test
 			foreach(var version in databaseFiles.Keys)
 			{
