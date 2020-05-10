@@ -138,7 +138,7 @@ namespace OrcaMDF.OMS
 			foreach (var view in views)
 			{
 				var viewNode = viewsNode.Nodes.Add(view.Name);
-				viewNode.ContextMenu = viewMenu;
+				viewNode.ContextMenuStrip = viewMenu;
 			}
 		}
 
@@ -150,45 +150,45 @@ namespace OrcaMDF.OMS
 			foreach (var proc in procedures)
 			{
 				var procNode = proceduresNode.Nodes.Add(proc.Name);
-				procNode.ContextMenu = procedureMenu;
+				procNode.ContextMenuStrip = procedureMenu;
 			}
 		}
 
 		private void addBaseTablesNode(TreeNode rootNode)
 		{
 			var baseTableNode = rootNode.Nodes.Add("Base Tables");
-			baseTableNode.Nodes.Add("sys.sysallocunits").ContextMenu = baseTableMenu;
-			baseTableNode.Nodes.Add("sys.syscolpars").ContextMenu = baseTableMenu;
-			baseTableNode.Nodes.Add("sys.sysidxstats").ContextMenu = baseTableMenu;
-			baseTableNode.Nodes.Add("sys.sysiscols").ContextMenu = baseTableMenu;
-			baseTableNode.Nodes.Add("sys.sysobjvalues").ContextMenu = baseTableMenu;
-			baseTableNode.Nodes.Add("sys.sysowners").ContextMenu = baseTableMenu;
-			baseTableNode.Nodes.Add("sys.sysrowsets").ContextMenu = baseTableMenu;
-			baseTableNode.Nodes.Add("sys.sysrscols").ContextMenu = baseTableMenu;
-			baseTableNode.Nodes.Add("sys.sysscalartypes").ContextMenu = baseTableMenu;
-			baseTableNode.Nodes.Add("sys.sysschobjs").ContextMenu = baseTableMenu;
-			baseTableNode.Nodes.Add("sys.syssingleobjrefs").ContextMenu = baseTableMenu;
+			baseTableNode.Nodes.Add("sys.sysallocunits").ContextMenuStrip = baseTableMenu;
+			baseTableNode.Nodes.Add("sys.syscolpars").ContextMenuStrip = baseTableMenu;
+			baseTableNode.Nodes.Add("sys.sysidxstats").ContextMenuStrip = baseTableMenu;
+			baseTableNode.Nodes.Add("sys.sysiscols").ContextMenuStrip = baseTableMenu;
+			baseTableNode.Nodes.Add("sys.sysobjvalues").ContextMenuStrip = baseTableMenu;
+			baseTableNode.Nodes.Add("sys.sysowners").ContextMenuStrip = baseTableMenu;
+			baseTableNode.Nodes.Add("sys.sysrowsets").ContextMenuStrip = baseTableMenu;
+			baseTableNode.Nodes.Add("sys.sysrscols").ContextMenuStrip = baseTableMenu;
+			baseTableNode.Nodes.Add("sys.sysscalartypes").ContextMenuStrip = baseTableMenu;
+			baseTableNode.Nodes.Add("sys.sysschobjs").ContextMenuStrip = baseTableMenu;
+			baseTableNode.Nodes.Add("sys.syssingleobjrefs").ContextMenuStrip = baseTableMenu;
 		}
 
 		private void addDmvNodes(TreeNode rootNode)
 		{
 			var dmvNode = rootNode.Nodes.Add("DMVs");
-			dmvNode.Nodes.Add("sys.columns").ContextMenu = dmvMenu;
-			dmvNode.Nodes.Add("sys.database_principals").ContextMenu = dmvMenu;
-			dmvNode.Nodes.Add("sys.foreign_keys").ContextMenu = dmvMenu;
-			dmvNode.Nodes.Add("sys.indexes").ContextMenu = dmvMenu;
-			dmvNode.Nodes.Add("sys.index_columns").ContextMenu = dmvMenu;
-			dmvNode.Nodes.Add("sys.objects").ContextMenu = dmvMenu;
-			dmvNode.Nodes.Add("sys.objects$").ContextMenu = dmvMenu;
-			dmvNode.Nodes.Add("sys.partitions").ContextMenu = dmvMenu;
-			dmvNode.Nodes.Add("sys.procedures").ContextMenu = dmvMenu;
-			dmvNode.Nodes.Add("sys.sql_modules").ContextMenu = dmvMenu;
-			dmvNode.Nodes.Add("sys.system_internals_allocation_units").ContextMenu = dmvMenu;
-			dmvNode.Nodes.Add("sys.system_internals_partitions").ContextMenu = dmvMenu;
-			dmvNode.Nodes.Add("sys.system_internals_partition_columns").ContextMenu = dmvMenu;
-			dmvNode.Nodes.Add("sys.tables").ContextMenu = dmvMenu;
-			dmvNode.Nodes.Add("sys.types").ContextMenu = dmvMenu;
-			dmvNode.Nodes.Add("sys.views").ContextMenu = dmvMenu;
+			dmvNode.Nodes.Add("sys.columns").ContextMenuStrip = dmvMenu;
+			dmvNode.Nodes.Add("sys.database_principals").ContextMenuStrip = dmvMenu;
+			dmvNode.Nodes.Add("sys.foreign_keys").ContextMenuStrip = dmvMenu;
+			dmvNode.Nodes.Add("sys.indexes").ContextMenuStrip = dmvMenu;
+			dmvNode.Nodes.Add("sys.index_columns").ContextMenuStrip = dmvMenu;
+			dmvNode.Nodes.Add("sys.objects").ContextMenuStrip = dmvMenu;
+			dmvNode.Nodes.Add("sys.objects$").ContextMenuStrip = dmvMenu;
+			dmvNode.Nodes.Add("sys.partitions").ContextMenuStrip = dmvMenu;
+			dmvNode.Nodes.Add("sys.procedures").ContextMenuStrip = dmvMenu;
+			dmvNode.Nodes.Add("sys.sql_modules").ContextMenuStrip = dmvMenu;
+			dmvNode.Nodes.Add("sys.system_internals_allocation_units").ContextMenuStrip = dmvMenu;
+			dmvNode.Nodes.Add("sys.system_internals_partitions").ContextMenuStrip = dmvMenu;
+			dmvNode.Nodes.Add("sys.system_internals_partition_columns").ContextMenuStrip = dmvMenu;
+			dmvNode.Nodes.Add("sys.tables").ContextMenuStrip = dmvMenu;
+			dmvNode.Nodes.Add("sys.types").ContextMenuStrip = dmvMenu;
+			dmvNode.Nodes.Add("sys.views").ContextMenuStrip = dmvMenu;
 		}
 
 		private void addTablesNode(TreeNode rootNode)
@@ -199,7 +199,7 @@ namespace OrcaMDF.OMS
 			foreach (var t in tables)
 			{
 				var tableNode = tableRootNode.Nodes.Add(t.Name);
-				tableNode.ContextMenu = tableMenu;
+				tableNode.ContextMenuStrip = tableMenu;
 
 				// Add columns
 				var tableColumnsNode = tableNode.Nodes.Add("Columns");

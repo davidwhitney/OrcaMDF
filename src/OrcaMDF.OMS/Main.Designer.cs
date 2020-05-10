@@ -1,4 +1,11 @@
-﻿namespace OrcaMDF.OMS
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
+using System.Threading;
+using System.Windows.Forms;
+
+namespace OrcaMDF.OMS
 {
 	partial class Main
 	{
@@ -42,16 +49,16 @@
 			this.gridStatus = new System.Windows.Forms.StatusStrip();
 			this.gridStatusRows = new System.Windows.Forms.ToolStripStatusLabel();
 			this.grid = new System.Windows.Forms.DataGridView();
-			this.tableMenu = new System.Windows.Forms.ContextMenu();
-			this.menuItem1 = new System.Windows.Forms.MenuItem();
-			this.dmvMenu = new System.Windows.Forms.ContextMenu();
-			this.menuItem2 = new System.Windows.Forms.MenuItem();
-			this.baseTableMenu = new System.Windows.Forms.ContextMenu();
-			this.menuItem3 = new System.Windows.Forms.MenuItem();
-			this.procedureMenu = new System.Windows.Forms.ContextMenu();
-			this.menuItem4 = new System.Windows.Forms.MenuItem();
-			this.viewMenu = new System.Windows.Forms.ContextMenu();
-			this.menuItem5 = new System.Windows.Forms.MenuItem();
+			this.tableMenu = new System.Windows.Forms.ContextMenuStrip();
+			this.menuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+			this.dmvMenu = new System.Windows.Forms.ContextMenuStrip();
+			this.menuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+			this.baseTableMenu = new System.Windows.Forms.ContextMenuStrip();
+			this.menuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+			this.procedureMenu = new System.Windows.Forms.ContextMenuStrip();
+			this.menuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+			this.viewMenu = new System.Windows.Forms.ContextMenuStrip();
+			this.menuItem5 = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip1.SuspendLayout();
 			this.panel1.SuspendLayout();
 			this.panel2.SuspendLayout();
@@ -181,56 +188,51 @@
 			// 
 			// tableMenu
 			// 
-			this.tableMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+			this.tableMenu.Items.AddRange(new System.Windows.Forms.ToolStripMenuItem[] {
             this.menuItem1});
 			// 
 			// menuItem1
 			// 
-			this.menuItem1.Index = 0;
 			this.menuItem1.Text = "Select Top 1000 Rows";
 			this.menuItem1.Click += new System.EventHandler(this.menuItem1_Click);
 			// 
 			// dmvMenu
 			// 
-			this.dmvMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+			this.dmvMenu.Items.AddRange(new System.Windows.Forms.ToolStripMenuItem[] {
             this.menuItem2});
 			// 
 			// menuItem2
 			// 
-			this.menuItem2.Index = 0;
 			this.menuItem2.Text = "Select All Rows";
 			this.menuItem2.Click += new System.EventHandler(this.menuItem2_Click);
 			// 
 			// baseTableMenu
 			// 
-			this.baseTableMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+			this.baseTableMenu.Items.AddRange(new System.Windows.Forms.ToolStripMenuItem[] {
             this.menuItem3});
 			// 
 			// menuItem3
 			// 
-			this.menuItem3.Index = 0;
 			this.menuItem3.Text = "Select All Rows";
 			this.menuItem3.Click += new System.EventHandler(this.menuItem3_Click);
 			// 
 			// procedureMenu
 			// 
-			this.procedureMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+			this.procedureMenu.Items.AddRange(new System.Windows.Forms.ToolStripMenuItem[] {
             this.menuItem4});
 			// 
 			// menuItem4
 			// 
-			this.menuItem4.Index = 0;
 			this.menuItem4.Text = "View Code";
 			this.menuItem4.Click += new System.EventHandler(this.menuItem4_Click);
 			// 
 			// viewMenu
 			// 
-			this.viewMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+			this.viewMenu.Items.AddRange(new System.Windows.Forms.ToolStripMenuItem[] {
             this.menuItem5});
 			// 
 			// menuItem5
 			// 
-			this.menuItem5.Index = 0;
 			this.menuItem5.Text = "View Code";
 			this.menuItem5.Click += new System.EventHandler(this.menuItem5_Click);
 			// 
@@ -261,30 +263,30 @@
 
 		#endregion
 
-		private System.Windows.Forms.MenuStrip menuStrip1;
-		private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem1;
-		private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
-		private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-		private System.Windows.Forms.OpenFileDialog openDatabaseDialog;
-		private System.Windows.Forms.Panel panel1;
-		private System.Windows.Forms.Splitter splitter1;
-		private System.Windows.Forms.Panel panel2;
-		private System.Windows.Forms.TreeView treeview;
-		private System.Windows.Forms.DataGridView grid;
-		private System.Windows.Forms.ContextMenu tableMenu;
-		private System.Windows.Forms.MenuItem menuItem1;
-		private System.Windows.Forms.ContextMenu dmvMenu;
-		private System.Windows.Forms.MenuItem menuItem2;
-		private System.Windows.Forms.ContextMenu baseTableMenu;
-		private System.Windows.Forms.MenuItem menuItem3;
-		private System.Windows.Forms.StatusStrip gridStatus;
-		private System.Windows.Forms.ToolStripStatusLabel gridStatusRows;
-		private System.Windows.Forms.ContextMenu procedureMenu;
-		private System.Windows.Forms.MenuItem menuItem4;
-		private System.Windows.Forms.TextBox txtCode;
-		private System.Windows.Forms.ContextMenu viewMenu;
-		private System.Windows.Forms.MenuItem menuItem5;
+		private MenuStrip menuStrip1;
+		private ToolStripMenuItem openToolStripMenuItem;
+		private ToolStripMenuItem openToolStripMenuItem1;
+		private ToolStripSeparator toolStripMenuItem1;
+		private ToolStripMenuItem exitToolStripMenuItem;
+		private OpenFileDialog openDatabaseDialog;
+		private Panel panel1;
+		private Splitter splitter1;
+		private Panel panel2;
+		private TreeView treeview;
+		private DataGridView grid;
+        private ContextMenuStrip tableMenu;
+		private ToolStripMenuItem menuItem1;
+		private ContextMenuStrip dmvMenu;
+		private ToolStripMenuItem menuItem2;
+		private ContextMenuStrip baseTableMenu;
+		private ToolStripMenuItem menuItem3;
+		private StatusStrip gridStatus;
+		private ToolStripStatusLabel gridStatusRows;
+		private ContextMenuStrip procedureMenu;
+		private ToolStripMenuItem menuItem4;
+		private TextBox txtCode;
+		private ContextMenuStrip viewMenu;
+		private ToolStripMenuItem menuItem5;
 	}
 }
 
